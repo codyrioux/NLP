@@ -60,7 +60,7 @@
 ;; Some Notes on this function:
 ;; - The only difference between the two conds are that v = 1 in the first one
 ;; - This function should use recur to avoid a stack overflow on long sequences
-(defn v [obs state-graph likelihoods]
+(defn viterbi [obs state-graph likelihoods]
   "Some docs..."
   (cond (= (count obs) 1) (reduce most-likely-tuple
                         (map #(vector [%] (ab :start % (last obs) state-graph likelihoods))
