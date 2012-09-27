@@ -65,7 +65,7 @@
   (cond (= (count obs) 1) (reduce most-likely-tuple
                         (map #(vector [%] (ab :start % (last obs) state-graph likelihoods))
                              (keys (:start state-graph))))
-        :else (let [vval (v (pop obs) state-graph likelihoods)]
+        :else (let [vval (viterbi (pop obs) state-graph likelihoods)]
                 (reduce most-likely-tuple 
                         (map #(vector 
                                 (conj (first vval) %) 
