@@ -6,6 +6,9 @@ I decided to be difficult and write my implementations from the
 Jurafsky and Martin book in Clojure. This document will get you
 started running the examples.
 
+I'll use ;; to start a comment and user=> to denote stuff you should
+type into the clojure environment.
+
 = Setting Up The Environment =
 
 I have packaged a script called install-lein.sh that will download the
