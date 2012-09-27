@@ -30,6 +30,9 @@ I will add some example usage in the near future.
 * Implement Exercise 4.6 (Katz Backoff)
 * Implement Exercise 4.7 (Compute Perplexity)
 
+* Implement Test Cases (Learn how first!)
+* Implement Proper Documentation (Learn how first!)
+
 ## License
 
 Copyright © 2012 Cody Rioux
