@@ -3,6 +3,10 @@
 A Clojure implementation of the algorithms found in Speech and Language
 Processing by Daniel Jurafsky and James H Martin.
 
+The purpose of this code base is twofold; To improve my comfortability and
+skills with Clojure, and to improve my knowledge of algorithms used in
+Natural Language Processing and Computational Linguistics.
+
 ## Implementations
 
 ### Chapter 2
