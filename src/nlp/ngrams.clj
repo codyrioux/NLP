@@ -1,4 +1,4 @@
-(ns nlp.words
+(ns nlp.ngrams
   (:require [clojure.string :as str]))
 
 (defn tokenize [input] (str/split input #" "))
