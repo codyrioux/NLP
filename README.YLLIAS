@@ -29,7 +29,16 @@ of the following examples assume you're at the REPL.
 
 == Chapter 2 ==
 
+;; Lets chit chat with ELIZA
+;; Trigger phrases for her are: hi, i feel, i was, no, i felt, all, always
+
 user=> (use 'nlp.eliza)
+user=>(eliza)
+ELIZA> hi there
+ELIZA> i feel like you aren't paying attention
+ELIZA> no
+
+;; You can press ctrl-c to kill her and drop back to the clojure REPL
 
 == Chapter 4 ==
 
