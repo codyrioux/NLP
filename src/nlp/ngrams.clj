@@ -1,7 +1,7 @@
 (ns nlp.ngrams
   (:require [clojure.string :as str]))
 
-(defn tokenize [input] (str/split input #" "))
+(defn tokenize [input] (str/split input #" |\n"))
 
 (defn ngrams [n coll]
   "Computes a map with the ngram as the key, and the frequency as the value."
