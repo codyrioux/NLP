@@ -26,9 +26,11 @@
     (if (= 0 (count candidate-words)) (first (first (rand-nth (seq ngrams))))
     (nth (first (rand-nth candidate-words)) (count words)))))
 
-(defn generate-random-sentence [sentence-length ngrams sentence]
+(defn generate-random-sentence
   "Generates a random sentence of length sentence-length using the supplied ngrams."
+  ([sentence-length ngrams] (generate-random-sentence sentence-length ngrams []))
+  ([sentence-length ngrams sentence]
   (if (= 0 sentence-length) sentence
   (let [n  (count (first (first ngrams)))]
     (generate-random-sentence (dec sentence-length) ngrams (conj sentence
-    (get-random-next-word ngrams (take-last (dec n) sentence)))))))
+    (get-random-next-word ngrams (take-last (dec n) sentence))))))))
