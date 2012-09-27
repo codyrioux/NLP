@@ -26,6 +26,8 @@ I will add some example usage in the near future.
 
 ## Todo
 
+* Fix ELIZA, she appears to be broken
+
 * Implement Exercise 3.11 (Minimum Edit Distance)
 * Implement Exercise 4.5 (Good-Turing Discounting)
 * Implement Exercise 4.6 (Katz Backoff)
