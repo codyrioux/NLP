@@ -72,3 +72,4 @@
                                 (* (second vval) 
                                    (ab :hot % (last obs) state-graph likelihoods)))
                              (remove #{:start} (keys state-graph)))))))
+(def viterbi (memoize viterbi))
