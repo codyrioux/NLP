@@ -30,7 +30,7 @@
   "Generates a random sentence of length sentence-length using the supplied ngrams."
   ([sentence-length ngrams] (generate-random-sentence sentence-length ngrams []))
   ([sentence-length ngrams sentence]
-  (if (= 0 sentence-length) sentence
+  (if (= 0 sentence-length) (str/join " " sentence)
   (let [n  (count (first (first ngrams)))]
     (generate-random-sentence (dec sentence-length) ngrams (conj sentence
     (get-random-next-word ngrams (take-last (dec n) sentence))))))))
