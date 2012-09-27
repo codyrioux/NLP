@@ -1,0 +1,67 @@
+= Introduction =
+
+Hey Yllias,
+
+I decided to be difficult and write my implementations from the
+Jurafsky and Martin book in Clojure. This document will get you
+started running the examples.
+
+= Setting Up The Environment =
+
+I have packaged a script called install-lein.sh that will download the
+lein tool and place it in ~/bin as well as add ~/bin to your path
+by placing a line in .bash_profile.
+
+This should have you up and running with lein, which is the clojure build
+tool of choice.
+
+= Running the Examples =
+
+First thing, change directory into the root of the source tree and type:
+
+"lein repl"
+
+This will start an interactive environment for running clojure code. All
+of the following examples assume you're at the REPL.
+
+== Chapter 2 ==
+
+user=> (use 'nlp.eliza)
+
+== Chapter 4 ==
+
+=== Exercise 4.2 ===
+
+;; Lets calculate the bigrams of a string
+user=>(ngrams 2 (tokenize "This is a test string."))
+
+;; Now lets calculate the trigrams in this file
+;; Path is relative to the directory in which you started the REPL
+user=>(ngrams 3 (tokenize (slurp "README.YLLIAS")))
+
+;; Lets save these trigrams in a var
+user=>(def my-trigrams (ngrams 3 (tokenize (slurp "README.YLLIAS"))))
+
+=== Exercise 4.4 ===
+
+;; Lets generate a random 5 word sentence from our text file
+user=>(generate-random-sentence 5 my-trigrams)
+
+== Chapter 6 ==
+
+=== Exercise 6.1 ===
+
+;; Lets run te ice cream examples asked in 6.1
+;; I have created the data structures for this problem.
+;; The state graph is in a var named ex-sgraph
+;; The likelihoods are in a var named ex-likely
+
+user=>(use 'nlp.hmm :reload-all)
+user=> (forward [3 3 1 1 2 2 3 1 3] ex-sgraph ex-likely)
+user=> (forward [3 3 1 1 2 3 3 1 2] ex-sgraph ex-likely)
+
+=== Exercise 6.2 ===
+
+;; Now lets compute the most likely sequence
+user=> (viterbi [3 3 1 1 2 2 3 1 3] ex-sgraph ex-likely)
+user=> (viterbi [3 3 1 1 2 3 3 1 2] ex-sgraph ex-likely)

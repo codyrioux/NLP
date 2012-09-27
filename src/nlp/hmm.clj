@@ -1,11 +1,11 @@
 (ns nlp.hmm)
 
 ;; Some data structures to assist in testing and development.
-(def example-state-graph {:start {:hot 0.8, :cold 0.2}
-                          :hot {:hot 0.7, :cold 0.3}
-                          :cold {:hot 0.4, :cold 0.6}})
-(def example-observation-likelihoods {:hot {1 0.2, 2 0.4, 3 0.4}
-                                      :cold {1 0.5, 2 0.4, 3 0.1}})
+(def ex-sgraph {:start {:hot 0.8, :cold 0.2}
+                :hot {:hot 0.7, :cold 0.3}
+                :cold {:hot 0.4, :cold 0.6}})
+(def ex-likely {:hot {1 0.2, 2 0.4, 3 0.4}
+                :cold {1 0.5, 2 0.4, 3 0.1}})
 
 (defn b [o, j, observation-likelihoods]
   "The state observation likelihood of the observation symbol o given

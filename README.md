@@ -12,6 +12,7 @@ Processing by Daniel Jurafsky and James H Martin.
 ### Chapter 4
 
 * Exercise 4.2 implemented in src/nlp/ngrams.clj
+* Exercise 4.4 implemented in src/nlp/ngrams.clj
 
 ### Chapter 6
 
