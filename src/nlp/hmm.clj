@@ -52,6 +52,7 @@
 ;; Helper Functions for Viterbi
 (defn most-likely-tuple [x y] (if (> (second x) (second y)) x y))
 (defn ab [prev state obs state-graph likelihoods] (* (a prev state state-graph) (b obs state likelihoods)))
+(defn get-children [state state-graph] (keys (state state-graph)))
 
 ;; Viterbi Algorithm
 ;;
@@ -70,6 +71,7 @@
                         (map #(vector 
                                 (conj (first vval) %) 
                                 (* (second vval) 
-                                   (ab :hot % (last obs) state-graph likelihoods)))
-                             (remove #{:start} (keys state-graph)))))))
+                                   (ab (last (first vval)) % (last obs) state-graph likelihoods)))
+                             (get-children (last (first vval)) state-graph))))))
+
 (def viterbi (memoize viterbi))
