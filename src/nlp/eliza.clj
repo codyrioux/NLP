@@ -19,6 +19,9 @@
   (some #(find-matching-rule % input) rules))
 
 (defn eliza []
+  "Starts an ELIZA prompt. One can respond simply by typing in
+  queries directly. Do not type quotes or anything around your
+  input."
   (while true
     (print "Eliza> ")
     (flush)
