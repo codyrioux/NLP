@@ -23,6 +23,9 @@ Natural Language Processing and Computational Linguistics.
 * Exercise 6.1 implemented in src/nlp/hmm.clj as function forward
 * Exercise 6.2 implemented in src/nlp/hmm.clj as function viterbi
 
+### Chapter 13
+* Exercise 13.1 implemented in src/nlp/grammar.clj as function cfg-to-cnf
+
 ## Usage
 
 I will add some example usage in the near future.
@@ -34,6 +37,7 @@ I will add some example usage in the near future.
 * Implement Exercise 4.5 (Good-Turing Discounting)
 * Implement Exercise 4.6 (Katz Backoff)
 * Implement Exercise 4.7 (Compute Perplexity)
+* Implement Exercise 13.2 (CKY algorithm)
 
 * Implement Test Cases (Learn how first!)
 * Implement Proper Documentation (Learn how first!)
