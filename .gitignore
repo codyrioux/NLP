@@ -11,3 +11,4 @@ pom.xml
 *.swp
 install-lein.sh
 models/
+.lein-repl-history

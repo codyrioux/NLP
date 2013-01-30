@@ -138,6 +138,12 @@
                                (seq (generate-normalized-rules new-id (rest rule)))))
     :else (cons {initial-symbol #{rule}} nil)))
 
+(defn remove-gt3-rules [grammar]
+  (->> 
+    (for [[k v] grammar] (let [gnr (partial generate-normalized-rules k)] (map gnr v)))
+    (map (partial apply merge-with concat) (map (partial apply concat)))
+    (reduce (partial merge-with concat))))
+
 (defn cleanup-non-chomsky-rules [grammar]
   "Eliminate all rules that have over two variables on the right hand size.
   If RHS has any terminals just create a new nonterminal that generates it.
@@ -150,12 +156,6 @@
     (remove-gt3-rules
       (into {} (concat (into {} (for [[k v] grammar] [k (terminal-replacer v)]))
                        (invert-terminal-map terminal-map))))))
-
-(defn remove-gt3-rules [grammar]
-  (->> 
-    (for [[k v] grammar] (let [gnr (partial generate-normalized-rules k)] (map gnr v)))
-    (map (partial apply merge-with concat) (map (partial apply concat)))
-    (reduce (partial merge-with concat))))
 
 (defn cfg-to-cnf [grammar start]
   "Converts an arbitrary context free grammar to Chomsky Normal Form.
